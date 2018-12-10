@@ -1,0 +1,44 @@
+create database network;
+
+use network;
+
+create table person(
+id varchar(20) primary key,
+password varchar(20),
+name varchar(20));
+
+alter table person add primary key (id);
+
+create table pp(
+id varchar(20),
+pro_number int,
+role varchar(20),
+url_num int,
+chat_count int,
+code_count int);
+
+alter table pp add primary key(id,pro_number);
+
+create table project(
+pro_number int,
+pro_name varchar(50),
+date date,
+pro_email varchar(50),
+startdate date);
+
+alter table project add primary key(pro_number,pro_name);
+
+create table vote(
+vote_name varchar(50),
+pro_number int,
+choice int,
+choice_name varchar(100));
+
+alter table vote add primary key(vote_name,pro_number);
+
+create table pv(
+vote_name varchar(50),
+id varchar(20),
+choice int);
+
+alter table pv add primary key(vote_name,id);
